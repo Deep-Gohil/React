@@ -15,13 +15,13 @@ const TodoItem = ({
 
   return (
     <div>
-      <h3>{task}</h3>
-      <p>due:{date}</p>
+      <h1>{task}</h1>
+      <h5>due:{date}</h5>
       <button onClick={() => onStatusUpdate(id)}>
-        {isCompleted ? "mark as  pending" : "mark as complete"}
+        {isCompleted ? "pending" : "complete"}
       </button>
-      <button onClick={handleUpdate}>update</button>
-      <button onClick={() => onDelete(id)}>delete</button>
+      <button onClick={handleUpdate}>Update</button>
+      <button onClick={() => onDelete(id)}>Delete</button>
     </div>
   );
 };
