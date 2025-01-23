@@ -1,0 +1,16 @@
+{
+  "courses": [
+    {
+      "id": "c49d",
+      "courseName": "react",
+      "fee": "10000",
+      "duration": "20"
+    },
+    {
+      "id": "d12a",
+      "courseName": "node",
+      "fee": "20000",
+      "duration": "10"
+    }
+  ]
+}
