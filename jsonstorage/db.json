@@ -7,10 +7,22 @@
       "duration": "20"
     },
     {
-      "id": "d12a",
-      "courseName": "node",
+      "id": "4d43",
+      "courseName": "Nodejs",
+      "fee": "100000",
+      "duration": "20"
+    },
+    {
+      "id": "f371",
+      "courseName": "Java",
       "fee": "20000",
-      "duration": "10"
+      "duration": "80"
+    },
+    {
+      "id": "be9f",
+      "courseName": "",
+      "fee": "",
+      "duration": ""
     }
   ]
 }
