@@ -3,31 +3,39 @@ import "./getData.css"
 import axios from "axios"
 
 const getData = () => {
-  const [data,setData] = useState([])
+  const [data, setData] = useState([])
 
-  const getAllData = async()=>{
+  const getAllData = async () => {
     let res = await axios.get("http://localhost:3000/foods")
-    setData(res.data);   
+    setData(res.data);
   }
 
-  useEffect(()=>{
+  const handleDelete = async (id) => {
+    await axios.delete(`http://localhost:3000/foods/${id}`)
     getAllData();
-  },[data])
+  }
+
+  useEffect(() => {
+    getAllData();
+  }, [data])
 
   return (
     <div className='add-main'>
-        {
-          data.map((ele)=>{
-            return (
-              <div key={ele.id}>
+      {
+        data.map((ele) => {
+          return (
+            <div className='main-div'>
+              <div key={ele.id} className='elements'>
                 <p>{ele.image}</p>
                 <h2>{ele.title}</h2>
                 <p>Price: {ele.price}</p>
                 <p>Description: {ele.description}</p>
+                <button onClick={()=>handleDelete(ele.id)}>Delete</button>
               </div>
-            )
-          })
-        }
+            </div>
+          )
+        })
+      }
     </div>
   )
 }

@@ -1,11 +1,16 @@
 {
   "foods": [
     {
-      "id": "533c",
-      "title": "New",
-      "image": "new.jpg",
-      "price": "199",
-      "description": "New Food Added"
+      "id": "88fd",
+      "title": "laptop",
+      "price": "200000",
+      "description": "laptop"
+    },
+    {
+      "id": "d737",
+      "title": "watch",
+      "price": "299",
+      "description": "smart watch"
     }
   ]
 }
