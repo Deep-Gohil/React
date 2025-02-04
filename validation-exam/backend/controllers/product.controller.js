@@ -6,10 +6,8 @@ const createProduct = async (req, res) => {
         req.body.img = req.file.path;
       }
 
-    //   req.body.user = "671c9b95989b246fb9a27070";
   
-      req.body.user = req.user.id;
-    // console.log(req.user.id);
+      // req.body.user = req.user.id;
     
       const product = await Product.create(req.body);
       res.status(201).send(product);
@@ -21,7 +19,7 @@ const createProduct = async (req, res) => {
 
 const getProducts = async (req, res) => {
   try {
-    let products = await Product.find().populate("user");
+    let products = await Product.find()
     res.status(200).send(products);
   } catch (error) {
     res.status(500).send({ error: error });
