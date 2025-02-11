@@ -13,19 +13,20 @@ const createUser = async (req, res) => {
 
     let hashedPassword = await bcrypt.hash(password, 10);
 
+    
     newUser = User.create({
-        username,
-        email,
+        username:username,
+        email:email,
         password: hashedPassword
     });
 
     let token = await jwt.sign({
-        username,
-        email,
+        username:newUser.username,
+        email:newUser.email,
         id: newUser._id
     }, "private-key");
 
-    Cookies.set('token', token)
+    Cookies.set('token', token);
     res.json({ message: "User created successfully", token, newUser });
 };
 
